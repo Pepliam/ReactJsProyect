@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/NavBar';
+import BarraNav from './components/BarraNav';
 import ItemListContainer from './components/ItemListContainer';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   }
   return (
       <>
-        <NavBar/>
+        <BarraNav/>
         <ItemListContainer greeting="text"></ItemListContainer>
         <div className="container" style={styles}>
           
