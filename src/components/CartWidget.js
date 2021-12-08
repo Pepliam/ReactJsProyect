@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react'
 
 function CartWidget(){
-    return(
-        <CartWidget/>
-        
-    )
+    return(  
+          <img src="logo.svg"></img>
+        )
 }
-    
-export default CartWidget
+
+export default CartWidget;

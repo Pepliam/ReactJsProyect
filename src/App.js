@@ -1,26 +1,30 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BarraNav from './components/BarraNav';
-import ItemListContainer from './components/ItemListContainer';
+import NavBarComponent from './components/NavBar'
+import Shell from './components/Shell';
+import ItemListCointainer from './components/ItemListContainer';
+import CartWidget from './components/CartWidget';
+
 
 function App() {
-  const styles = {
-    color: `red`,
-    backgroundColor: "white"
-  }
   return (
-      <>
-        <BarraNav/>
-        <ItemListContainer greeting="text"></ItemListContainer>
-        <div className="container" style={styles}>
-          
-        </div>
-
-      </>
+    <React.Fragment className="App">     
+        
+        <NavBarComponent >        
+          <div><CartWidget/></div>
+          <div><ItemListCointainer/></div>
+          <div>3</div>
+          <div>4</div>
+        </NavBarComponent>        
+        <Shell>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </Shell>
+    </React.Fragment>
   );
 }
-
-
 
 export default App;

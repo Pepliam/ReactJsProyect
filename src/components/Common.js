@@ -1,6 +1,7 @@
 const Common = {
-    ButtonSubmit : ()=>(<button>SUBMIT</button>),
-    TitleLabel : ({text})=>(<p>{text}</p>)
+    ButtonSubmit : (props)=>(<button onClick={props.click}>SUBMIT</button>),
+    TitleLabel : ({text, estilo})=>(<p className={estilo}>{text}</p>)
 }
+
 
 export default Common;

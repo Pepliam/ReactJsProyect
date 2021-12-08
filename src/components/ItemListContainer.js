@@ -1,16 +1,9 @@
-import React, {Component} from 'react';
-import Common from "./Common";
-import "../styles/ItemListContainer.css"
+import React from 'react'
 
-class ItemListContainer extends Component {    
-    render (){
-        return(
-            <>
-                <Common.TitleLabel text="HOLA" estilo="color-texto-azul"></Common.TitleLabel>
-                <Common.ButtonSubmit></Common.ButtonSubmit>
-            </>
+function ItemListContainer(){
+    return(  
+          <h3>Titulo!</h3>
         )
-    }
 }
 
-export default ItemListContainer
+export default ItemListContainer;
