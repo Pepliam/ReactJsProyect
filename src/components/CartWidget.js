@@ -1,8 +1,10 @@
 import React from 'react'
+import miImagen from '../image/carritoreact.png'
+
 
 function CartWidget(){
     return(  
-          <img src="logo.svg"></img>
+          <img src={miImagen} alt="imagen carro"/>
         )
 }
 

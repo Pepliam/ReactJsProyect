@@ -1,0 +1,21 @@
+.buttons-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.button-add{
+    background-color: blue;
+    color: burlywood;
+    border-radius: 12px;
+}
+
+.button-sub{
+    background-color: red;
+    color: burlywood;
+    border-radius: 12px;
+}
+
+.value{
+    padding-right: 6px;
+    padding-left: 6px;
+}
