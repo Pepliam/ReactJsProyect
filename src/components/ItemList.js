@@ -16,7 +16,7 @@ class ItemList extends Component {
         const aux = new Promise ((resolve,reject)=>{
             setTimeout(()=>{
                 resolve ({titulo:"CAMBIO", img: "CAMBIO", descripcion: "CAMBIO"})
-            },3000)
+            },2000)
         })
 
         aux.then((res)=>{
