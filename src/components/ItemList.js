@@ -8,7 +8,7 @@ class ItemList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            arr: [{titulo:"Titulo", img: "imagen", descripcion:"descr"}, {titulo:"Titulo", img: "imagen", descripcion:"descr"}]
+            arr: [{titulo:"Titulo", img: "imagen", descripcion:"descr"}, {descripcion:"otradescr"}]
         }
     }
 
@@ -35,9 +35,11 @@ class ItemList extends Component {
         
         return(
             <>
+                <Item.ButtonSubmit click={this.handleClick}></Item.ButtonSubmit>
                 {this.state.arr.map((el)=>{
-                    return <Item titulo={el.titulo} imagen={el.img} descr={el.descripcion}></Item>
-                })}                
+                    return(
+                    <Item.Item titulo={el.titulo} imagen={el.img} descr={el.descripcion}/>
+                )})}            
                 
                                 
             </>

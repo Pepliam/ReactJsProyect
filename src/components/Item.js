@@ -1,4 +1,5 @@
-const Item = {  ButtonSubmit : (props)=>(<button onClick={props.click}>Saludo!</button>),  
+const Item = {
+    ButtonSubmit : (props)=>(<button onClick={props.click}>Desplegar Producto</button>),  
     Item: (props)=>(
         <div>
             <h1>{props.titulo}</h1>
@@ -6,7 +7,7 @@ const Item = {  ButtonSubmit : (props)=>(<button onClick={props.click}>Saludo!</
             <p>{props.descr}</p>
         </div>
     )
-    }
+}
 
 
 export default Item;

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBarComponent from './components/NavBar'
 import ItemList from './components/ItemList';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
@@ -11,9 +12,10 @@ function App() {
   return (
     <React.Fragment className="App">        
       <NavBarComponent/>      
-      <ItemListContainer greeting="Contador"/>
-      <ItemList/>      
-      
+      {/*<ItemListContainer greeting="Contador"/>
+      <ItemList/>
+      <ItemDetail/>  */}    
+      <ItemDetailContainer />
     </React.Fragment>
   );
 }
