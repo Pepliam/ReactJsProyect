@@ -14,7 +14,7 @@ class Shell extends Component {
 
     handleClick= (params) => {/*cuando hago click hago esto*/
         this.setState({click:"Hola!"})
-        console.log(this.state)
+      
     }
 
     render (){
@@ -22,10 +22,7 @@ class Shell extends Component {
         return(
             <>
                                 
-                <Common.TitleLabel text={this.state.name} estilo="color-texto-nav-rojo"></Common.TitleLabel>
-                <Common.TitleLabel text="Lorem Ip" estilo="color-texto-nav-verde"></Common.TitleLabel>               
-                <Common.ButtonSubmit click={this.handleClick}></Common.ButtonSubmit>
-                <Common.TitleLabel text={this.state.click}/*solo renderizo esto puntualmente*/ estilo="color-texto-nav-azul"></Common.TitleLabel>
+                
                                 
             </>
         )

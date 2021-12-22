@@ -1,14 +1,12 @@
-const Item = {
-    ButtonSubmit : (props)=>(<button onClick={props.click}>Desplegar Producto</button>),  
-    Item: (props)=>(
+import {useParams} from 'react-router-dom'
+
+export default function Items (){
+
+    const {name} = useParams()
+
+    return(
         <div>
-            <h1>{props.titulo}</h1>
-            <p>{props.imagen}</p>
-            <p>{props.descr}</p>
+            Nombre Item: {name}
         </div>
     )
 }
-
-
-export default Item;
-
