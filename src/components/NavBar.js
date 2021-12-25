@@ -16,7 +16,7 @@ function NavBarComponent(props){
 
     const [state2] = useState ("StarWars")
 
-    
+        
     return (
     <Navbar bg="dark" variant="dark">
             <Container>                                           
@@ -26,6 +26,7 @@ function NavBarComponent(props){
                         <Nav.Link href="#home"><NavLink to="/">{state}</NavLink></Nav.Link>
                         <Nav.Link href="#MercadoLibre"><NavLink to="/category/MercadoLibre">{state1}</NavLink></Nav.Link> 
                         <Nav.Link href="#StarWars"><NavLink to="/category/StarWars">{state2}</NavLink></Nav.Link>
+                        
                         
                     </Nav>   
                     <CartWidget/>            

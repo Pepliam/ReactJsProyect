@@ -1,7 +1,30 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ItemCount from "./ItemCount";
 
-const ItemDetail = () =>{
+function ItemDetail(){
+        
+    /*logica api*/
+    const [item,setItem] = useState ({});
+    
+    
+    useEffect ( ()=>{
+        db()
+    }, [])
+
+    const db = async () => {
+        const call = await fetch (
+            "https://api.mercadolibre.com/sites/MLA/search?q=pokemon"
+        );
+        if(call.ok) {
+            const response = await call.json();
+            setItem(response.results.find(item => item.price > 5000));
+        } else {
+            call.catch ((err) => {
+                throw new Error ("Algo salio mal", err);
+            });
+        }
+    };
+/*------------------------------------------------*/
 
     /*logica modal, y funcionamiento ITEMCOUNT*/
     const [value, setValue] = useState(0);
@@ -23,10 +46,25 @@ const ItemDetail = () =>{
       };
 /*------------------------------------------------*/
 
-    return(
+
+  window.addEventListener("onAdd", ()=>{
+    console.log("borrar count")
+  })
+  return(
         <>
+        <div>
+            {item?.length ?? (
+                <div>
+                    <p>{item.title}</p>
+                    <img src={item.thumbnail} />
+                    <p>{item.price}</p>
+                </div>    
+            )}
+        </div>
+
         <ItemCount initialValue={value} restar={resta} sumar={suma}/>
         {showModal && <Modal/>};
+
         </>
     )
 }
