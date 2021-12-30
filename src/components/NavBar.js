@@ -12,21 +12,23 @@ function NavBarComponent(props){
     
     const [state] = useState ("Home")
     
-    const [state1] = useState ("MercadoLibre")
+    const [state1] = useState ("Personajes")
 
-    const [state2] = useState ("StarWars")
+    const [state2] = useState ("Planetas")
+   
+    const [state3] = useState ("Especies")
 
         
     return (
     <Navbar bg="dark" variant="dark">
             <Container>                                           
-                    <Navbar.Brand href="/" >MIAPP REACT</Navbar.Brand>
+                    <Navbar.Brand href="/" >StarWars REACT</Navbar.Brand>
                     <Nav className="me-auto">
 
                         <Nav.Link href="#home"><NavLink to="/">{state}</NavLink></Nav.Link>
-                        <Nav.Link href="#MercadoLibre"><NavLink to="/category/MercadoLibre">{state1}</NavLink></Nav.Link> 
-                        <Nav.Link href="#StarWars"><NavLink to="/category/StarWars">{state2}</NavLink></Nav.Link>
-                        
+                        <Nav.Link href="#Personajes"><NavLink to="/category/Personajes">{state1}</NavLink></Nav.Link> 
+                        <Nav.Link href="#Planetas"><NavLink to="/category/Planetas">{state2}</NavLink></Nav.Link> 
+                        <Nav.Link href="#Especies"><NavLink to="/category/Especies">{state3}</NavLink></Nav.Link>
                         
                     </Nav>   
                     <CartWidget/>            

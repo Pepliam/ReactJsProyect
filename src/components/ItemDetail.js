@@ -1,29 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useContext} from "react";
 import ItemCount from "./ItemCount";
+import CartContext from "./context/CartContext";
 
-function ItemDetail(){
+function ItemDetail(){       
         
-    /*logica api*/
-    const [item,setItem] = useState ({});
     
-    
-    useEffect ( ()=>{
-        db()
-    }, [])
+    const handleClick = ()=>{
+        return {} /*logica para guardar producto y cantidad como objeto en cart*/
+    }
 
-    const db = async () => {
-        const call = await fetch (
-            "https://api.mercadolibre.com/sites/MLA/search?q=pokemon"
-        );
-        if(call.ok) {
-            const response = await call.json();
-            setItem(response.results.find(item => item.price > 5000));
-        } else {
-            call.catch ((err) => {
-                throw new Error ("Algo salio mal", err);
-            });
-        }
-    };
+
 /*------------------------------------------------*/
 
     /*logica modal, y funcionamiento ITEMCOUNT*/
@@ -47,24 +33,16 @@ function ItemDetail(){
 /*------------------------------------------------*/
 
 
-  window.addEventListener("onAdd", ()=>{
-    console.log("borrar count")
-  })
-  return(
-        <>
-        <div>
-            {item?.length ?? (
-                <div>
-                    <p>{item.title}</p>
-                    <img src={item.thumbnail} />
-                    <p>{item.price}</p>
-                </div>    
-            )}
-        </div>
 
+    return(
+        <>
+        
         <ItemCount initialValue={value} restar={resta} sumar={suma}/>
         {showModal && <Modal/>};
-
+        <a href="/Cart">
+            <button onClick={handleClick}>Terminar Compra</button>
+        </a>
+       
         </>
     )
 }
