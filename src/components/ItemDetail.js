@@ -1,13 +1,10 @@
-import React, {useState, useContext} from "react";
+import React, {useState} from "react";
 import ItemCount from "./ItemCount";
-import CartContext from "./context/CartContext";
+
 
 function ItemDetail(){       
         
-    
-    const handleClick = ()=>{
-        return {} /*logica para guardar producto y cantidad como objeto en cart*/
-    }
+     
 
 
 /*------------------------------------------------*/
@@ -40,7 +37,7 @@ function ItemDetail(){
         <ItemCount initialValue={value} restar={resta} sumar={suma}/>
         {showModal && <Modal/>};
         <a href="/Cart">
-            <button onClick={handleClick}>Terminar Compra</button>
+        
         </a>
        
         </>

@@ -1,6 +1,5 @@
-import {useParams} from 'react-router-dom'
-import CartContext from "../components/context/CartContext"
-import React, {useContext} from 'react';
+
+import React from 'react';
 
 
 

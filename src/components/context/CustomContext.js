@@ -1,24 +1,19 @@
 import CartContext from "./CartContext";
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState} from "react";
 
 
 function CustomContext({children}) {
 
-       
-    let arr = []
+    const [state, setState] = useState ([])
+   
+    window.addEventListener("clickDetalle", (e)=>{
+    setState([...state,e.detail.event.target.innerText])
+   })
 
-    function addItem(value){
-        arr.push(value)
-    }
-
-    function checkItem(params){
-        return arr
-    }
-
-    
+   
 
     return (
-        <CartContext.Provider value={{addItem, checkItem}}>
+        <CartContext.Provider value={state}>
             {children}            
         </CartContext.Provider>
     )
