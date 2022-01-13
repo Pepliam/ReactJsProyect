@@ -1,7 +1,9 @@
 import React, {useState, useEffect, useParams} from 'react';
 import '../styles/ItemList.css';
 import {NavLink} from 'react-router-dom';
-import Item from './Item';
+import { doc, getDoc, getFirestore} from "firebase/firestore";
+import Item from "./Item";
+
 
 const ItemList = () => {
      
@@ -44,10 +46,12 @@ const renderProducts = () => (
                 <>
                 
                 <div className="products">
+                    
                     <h2>{product.name}</h2>
                     <h3>{product.cost}</h3>
                     <img src={product.image} alt={product.name}/>  
                     </div>
+                    <Item/>
                     <button onClick={()=> addToCart(product)}>Add to Cart</button>
                     
                     
@@ -63,6 +67,7 @@ const renderCart = () => (
                 <>
                 
                 <div className="products">
+                    <Item/>
                     <h2>{product.name}</h2>
                     <h3>{product.cost}</h3>
                     <img src={product.image} alt={product.name}/>  

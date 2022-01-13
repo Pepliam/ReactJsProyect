@@ -1,46 +1,30 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ItemCount from "./ItemCount";
+import { doc, getDoc, getFirestore, collection, getDocs, query, where} from "firebase/firestore";
 
+const ItemDetail = () => {    
+          
 
-function ItemDetail(){       
+    
+/*
+       const [stateData, setStateData] = useState([])
+  
+    useEffect(()=>{
+      const db = getFirestore();
+      const q = query(collection(db, "items"), where("price", ">", 4000));
+  
+      getDocs(q).then((snapshot)=>{
+        console.log(q)
+        setStateData(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})));
         
-     
-
-
-/*------------------------------------------------*/
-
-    /*logica modal, y funcionamiento ITEMCOUNT*/
-    const [value, setValue] = useState(0);
-    const [showModal, setShowModal] = useState(false);
-
-    const resta= (minstock, value) => {
-        if(value > minstock) setValue(prev => prev -1);
-      } ;
-    
-      const Modal = () => {
-        return (
-          <div><h5>Maximo alcanzado!</h5></div>
-        );
-      };
-    
-      const suma = (stock, value) => {
-        if(value < stock) setValue(prev => prev + 1);
-        else setShowModal((prev) => !prev);
-      };
-/*------------------------------------------------*/
-
+        });
+      },[]);
 
 
     return(
         <>
+        {stateData.map((value, id)=><p key={id}>{value.title}</p>)}
         
-        <ItemCount initialValue={value} restar={resta} sumar={suma}/>
-        {showModal && <Modal/>};
-        <a href="/Cart">
-        
-        </a>
-       
         </>
-    )
-}
-export default ItemDetail
+    )*/};
+export default ItemDetail();
