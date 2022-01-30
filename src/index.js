@@ -4,6 +4,7 @@ import './index.css';
 import { initializeApp } from "firebase/app";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CartContext from './components/context/CartContext';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDLtGsylRYYtPw99WPpMOmSHsOgkVDB4Fk",
@@ -18,8 +19,10 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <React.StrictMode>
+    <React.StrictMode>      
+    <CartContext>
     <App />
+    </CartContext>    
   </React.StrictMode>,
   document.getElementById('root')
 );

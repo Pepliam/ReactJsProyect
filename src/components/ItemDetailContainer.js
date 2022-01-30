@@ -1,10 +1,6 @@
-import ItemDetail from "./ItemDetail";
-import Container from 'react-bootstrap/esm/Container';
 import React, {useState, useEffect} from 'react';
 import '../styles/ItemList.css';
-import {NavLink} from 'react-router-dom';
-import { deleteDoc, writeBatch, updateDoc, addDoc, collection, getDocs, doc, getFirestore, getDoc, where, query} from "firebase/firestore";
-import Item from "./Item";
+import { addDoc, collection, getDocs, getFirestore} from "firebase/firestore";
 import {Form, Button} from 'react-bootstrap'
 
 
@@ -12,7 +8,7 @@ const ItemDetailContainer = () => {
     
     
     const name = "test"
-    const [state, setState] = useState([{name}])
+    
     const [stateData, setStateData] = useState([])
     const [newData, setNewData] = useState()
     
