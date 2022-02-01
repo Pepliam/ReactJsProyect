@@ -5,7 +5,7 @@ import Badge from 'react-bootstrap/Badge'
 import { FaShoppingCart } from 'react-icons/fa'
 import { CartState } from "./context/CartContext"
 import { AiFillDelete } from "react-icons/ai"
-import Styles from "../styles/Styles.css"
+import "../styles/Styles.css";
 import { Link } from "react-router-dom"
 import { Button } from "react-bootstrap"
 
@@ -21,7 +21,7 @@ function CartWidget(){
     return(
       <>
        <Nav>
-         <Dropdown alignRight>
+         <Dropdown>
            <Dropdown.Toggle variant="success">
              <FaShoppingCart fontSize="25px"/>
             <Badge>{cart.length}</Badge>           

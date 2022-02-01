@@ -2,7 +2,7 @@
 import { CartState } from "./context/CartContext"
 import React, {useState, useEffect} from "react";
 import { ListGroup, Button, Row, Col, Form, Image} from "react-bootstrap";
-import Styles from "../styles/Styles.css"
+import "../styles/Styles.css";
 import { AiFillDelete } from "react-icons/ai"
 
 const Cart = () => {
@@ -21,24 +21,39 @@ const Cart = () => {
     return (
         <>
         <div className="home">
+
+        <div className="filtersCart">
+            <span className="title"> 
+                Llevas : {cart.length} Especies Pokemon
+            </span>
+            <span className="spanTotalCarrito">
+                Total a pagar: ${total}
+            </span>
+            <Button className="buttonCart" type="button" disabled={cart.length === 0}>
+                Finalizar Compra
+            </Button>
+        </div>
+
             <div className="productContainerCart">
             <Row>
-                <ListGroup>
+                
+                <ListGroup className="listGroup">
                     
                 {cart.map((poke)=> (
                     <ListGroup.Item key={poke.id}>
-                        <Row>
-                            <Col md={2}>
+                        <Row className="rowClass">
+                            <Col md={3}>
                                 <Image src={poke.image} alt={poke.name} fluid rounded />
                             </Col>
-                            <Col md={2}>
+                            <Col md={3}>
                                 <span>{poke.name}</span>
                             </Col>
-                            <Col md={2}>
+                            <Col md={3}>
                                 <span>${poke.price}</span>
                             </Col>
-                            <Col md={2}>
+                            <Col md={3}>
                                 <Form.Control
+                                className="cantidadItem"
                                 as="select"
                                  value={poke.qty}
                                 onChange={(e)=>
@@ -56,7 +71,7 @@ const Cart = () => {
                                     ))}
                                 </Form.Control>
                             </Col>
-                            <Col md={2}>
+                            <Col md={3}>
                                 <Button 
                                     type="button"
                                     variant="light"
@@ -72,24 +87,11 @@ const Cart = () => {
                                     />
                                 </Button>
                             </Col>
-                            <Col md={2}>
-                                
-                            </Col>
                         </Row>
                     </ListGroup.Item>
                 ))}
                 </ListGroup>
-                                    <div className="filters summary">
-            <span className="title"> 
-                Subtotal : {cart.length} Item
-            </span>
-            <span className="spanTotalCarrito">
-                Total: ${total}
-            </span>
-            <Button type="button" disabled={cart.length === 0}>
-                Finalizar Compra
-            </Button>
-        </div>
+            
             </Row>
             </div>
         </div>

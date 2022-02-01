@@ -14,7 +14,7 @@ const Item = ({poke})=> {
 
 
   return (
-          <div className="products">
+          <div className="divItem">
               <Card className="card">
                   <Card.Img className="cardimg" variant="top" src={poke.image} alt={poke.name}/>
 
@@ -27,11 +27,10 @@ const Item = ({poke})=> {
                       <Card.Subtitle>
                           ${poke.price}
                       </Card.Subtitle>
-                      <br></br>
-
+                      
                       {
                           cart.some(p=>p.id===poke.id) ? (
-                          <Button
+                          <Button className="buttonAdd"
                            onClick={()=>{
                               dispatch({
                                   type: "REMOVE_FROM_CART",
@@ -44,7 +43,7 @@ const Item = ({poke})=> {
 
                           ) : (
 
-                          <Button
+                          <Button className="buttonAdd"
                            onClick={()=>{
                               dispatch({
                                   type: "ADD_TO_CART",

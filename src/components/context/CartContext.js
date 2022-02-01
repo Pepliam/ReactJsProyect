@@ -2,13 +2,15 @@ import { createContext, useReducer, useContext } from "react";
 import { cartReducer, productReducer } from "./Reducers";
 
 
+const Cart = createContext(); 
 
-
-const Cart = createContext();
 
 const CartContext = ({children}) => {
 
-    const pokes = [{
+    
+
+    const pokes = [
+        {
         id: 1,
         name: "Moltres",
         price: 50000,
@@ -24,15 +26,15 @@ const CartContext = ({children}) => {
     }, {
         id: 3,
         name: "Gyarados",
-        price: 4000,
+        price: 35000,
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/130.png",
-        inStock: 2,
+        inStock: 1,
     }, {
         id: 4,
         name: "Ditto",
         price: 5000,
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png",
-        inStock: 12,
+        inStock: 2,
     } , {
         id: 5,
         name: "Porygon",
@@ -81,6 +83,42 @@ const CartContext = ({children}) => {
         price: 52000,
         image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/145.png",
         inStock: 1,
+    } , {
+        id: 13,
+        name: "Pidgey",
+        price: 350,
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+        inStock: 14,
+    } , {
+        id: 14,
+        name: "Rattata",
+        price: 275,
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+        inStock: 23,
+    } , {
+        id: 15,
+        name: "Spearow",
+        price: 425,
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+        inStock: 9,
+    } , {
+        id: 16,
+        name: "Ekans",
+        price: 575,
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
+        inStock: 3,
+    } , {
+        id: 17,
+        name: "Caterpie",
+        price: 120,
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+        inStock: 32,
+    } , {
+        id: 18,
+        name: "Weedle",
+        price: 135,
+        image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+        inStock: 28,
     }
 ];
 

@@ -1,5 +1,5 @@
 import { Button, Form} from "react-bootstrap";
-import Styles from "../styles/Styles.css";
+import "../styles/Styles.css";
 import { CartState } from "../components/context/CartContext"
 
 const Filters = () => {
@@ -66,6 +66,7 @@ const Filters = () => {
             </span>
             
             <Button
+            className="filterButton"
              variant="dark"
              onClick={()=>
                 productDispatch({

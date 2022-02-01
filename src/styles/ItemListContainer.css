@@ -10,12 +10,38 @@
     padding: 20px;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: rgba(240, 229, 229, 0.288);
+    min-height: 89vh;
+   
 }
 
+.filters {
+    background-color: rgb(0, 0, 0);
+    color: rgb(247, 6, 66);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 285px;
+    height: 100%;
+}
+.filterButton{
+    background-color: rgb(202, 138, 0);
+}
+
+.filters > span {
+    padding-bottom: 22px;
+   
+}
+.summary{
+    width: 98%;
+    height: 50%;
+    text-align: center;
+}
 @media (max-width: 771px) {
 
     .productContainer {
         width: 58%;
         padding: 0;
+        min-height: 74vh;
     }
 }
